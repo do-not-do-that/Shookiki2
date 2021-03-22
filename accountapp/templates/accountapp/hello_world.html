@@ -2,6 +2,14 @@
 
 {% block content %}
     <div style="height: 10rem; background-color:#38df81; border-radius:1rem; margin:2rem;">
-        <h1>test~!</h1>
+        <h1>test</h1>
+
+        <form action="/account/hello_world/" method="post">
+            {% csrf_token %}
+            <input type="submit" class="btn btn-primary" value="POST">
+
+        </form>
+
+        {{text}}
     </div>
-{% endblock%}
+{% endblock %}
