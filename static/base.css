@@ -1,3 +1,4 @@
+
 .butter_logo{
     font-family: 'Chewy', cursive;
 }
@@ -20,4 +21,18 @@
     html{
         font-size: 13px;
     }
+}
+
+a{color:black; text-decoration: none;}
+a:hover{
+    color : black;
+    text-decoration: none;
+}
+
+.header_nav{
+    margin: 0 0.5rem;
+}
+
+.header_navber{
+    margin: 1rem 0;
 }

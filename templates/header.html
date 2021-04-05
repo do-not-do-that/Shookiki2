@@ -2,24 +2,25 @@
         <div>
             <h1 class="butter_logo">Butter</h1>
         </div>
-        <div>
-            <a href="{% url 'articleapp:list' %}">
-                <span>Article</span>
+        <div class="header_navbar">
+            <a href="{% url 'articleapp:list' %}" class="header_nav">
+                <span>Articles</span>
             </a>
-            <span>nav2</span>
-            <span>nav3</span>
+            <a href="{% url 'projectapp:list' %}" class="header_nav">
+            <span>Projects</span>
+            </a>
             {% if not user.is_authenticated %}
-            <a href="{% url 'accountapp:login'%}?next={{request.path}}">
+            <a href="{% url 'accountapp:login'%}?next={{request.path}}" class="header_nav">
                 <span>Login</span>
             </a>
-            <a href="{% url 'accountapp:create' %}">
+            <a href="{% url 'accountapp:create' %}" class="header_nav">
                 <span>SignUp</span>
             </a>
             {% else %}
-            <a href="{% url 'accountapp:detail' pk=user.pk %}">
+            <a href="{% url 'accountapp:detail' pk=user.pk %}" class="header_nav">
                 <span>MyPage</span>
             </a>
-            <a href="{% url 'accountapp:logout'%}?next={{request.path}}">
+            <a href="{% url 'accountapp:logout'%}?next={{request.path}}" class="header_nav">
                 <span>Logout</span>
             </a>
             {% endif %}
