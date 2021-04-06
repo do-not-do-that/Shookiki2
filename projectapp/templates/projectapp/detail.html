@@ -4,7 +4,7 @@
 {% block content %}
 
     <div  >
-        <div style="text-align: center; max-width:500px; margin: 4rem auto;">
+        <div style="text-align: center; max-width:500px; margin: 4rem auto 1.5rem auto;">
 
             <img src="{{ target_project.image.url }}" alt=""
                  style="height:12rem; width: 12rem; border-radius:20rem;
@@ -15,6 +15,20 @@
                 <h5 style="margin-bottom:3rem;">
                     {{target_project.description }}
                 </h5>
+        </div>
+
+        <div class="text-center mb-5 ">
+            {% if user.is_authenticated %}
+                {% if not subscription %}
+                    <a href="{% url 'subscribeapp:subscribe' %}?project_pk={{target_project.pk }}" class="btn btn-primary rounded-pill px-4">
+                      Subscribe
+                    </a>
+                {% else %}
+                    <a href="{% url 'subscribeapp:subscribe' %}?project_pk={{target_project.pk }}" class="btn btn-dark rounded-pill px-4">
+                      UnSubcribe
+                    </a>
+                {% endif %}
+            {% endif %}
         </div>
 
         <div>
