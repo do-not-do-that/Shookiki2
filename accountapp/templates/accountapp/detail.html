@@ -6,10 +6,6 @@
     <div  >
         <div style="text-align: center; max-width:500px; margin: 4rem auto;">
 
-
-
-
-
             {% if target_user.profile %}
             <img src="{{ target_user.profile.image.url }}" alt=""
                  style="height:12rem; width: 12rem; border-radius:20rem;
@@ -17,7 +13,9 @@
                 <h2 style="font-family: nanumSquareRoundOTFR">
                     {{ target_user.profile.nickname }}
                     {% if target_user == user %}
-                    <a href="{% url 'profileapp:update' pk=target_user.profile.pk %}">
+                    <a class="material-icons"
+                       style="box-shadow:0 0 4px #ccc; border-radius: 10rem; padding: .4rem;"
+                            href="{% url 'profileapp:update' pk=target_user.profile.pk %}">
                         edit
                     </a>
                     {% endif %}
@@ -37,19 +35,16 @@
             {% endif %}
             {% endif %}
 
-
-
-
             {% if target_user == user %}
-            <a href="{% url 'accountapp:update' pk=user.pk %}">
-                <p>
-                    Change Info
-                </p>
+            <a class="material-icons"
+                       style="box-shadow:0 0 4px #ccc; border-radius: 10rem; padding: .4rem;"
+                    href="{% url 'accountapp:update' pk=user.pk %}">
+                    settings
             </a>
-            <a href="{% url 'accountapp:delete' pk=user.pk %}">
-                <p>
-                    Quit
-                </p>
+            <a class="material-icons"
+                       style="box-shadow:0 0 4px #fcc; border-radius: 10rem; padding: .4rem;"
+                    href="{% url 'accountapp:delete' pk=user.pk %}">
+                    cancel
             </a>
             {% endif %}
         </div>
