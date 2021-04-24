@@ -29,9 +29,12 @@
 {% if article_list %}
 <div class="container">
   {% for article in article_list %}
+
   <a href="{% url 'articleapp:detail' pk=article.pk %}">
     {% include 'snippets/card.html' with article=article %}
+    헬{{ target_article.writer.profile.nickname }}로
   </a>
+
   {% endfor %}
 </div>
 <script src="{% static 'js/magicgrid.js' %}"></script>

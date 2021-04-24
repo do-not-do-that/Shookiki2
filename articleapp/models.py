@@ -14,3 +14,5 @@ class Article(models.Model):
     content = models.TextField(null=True)
 
     create_at = models.DateTimeField(auto_now_add=True, null=True)
+
+    like = models.IntegerField(default=0)

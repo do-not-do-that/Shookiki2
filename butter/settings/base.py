@@ -14,7 +14,10 @@ from pathlib import Path
 
 import os,environ
 
+from django.contrib import messages
 from django.urls import reverse_lazy
+
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
@@ -36,6 +39,7 @@ INSTALLED_APPS = [
     'commentapp',
     'projectapp',
     'subscribeapp',
+    'likeapp',
 ]
 
 MIDDLEWARE = [
@@ -47,6 +51,15 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+MESSAGE_TAGS= {
+    messages.ERROR: 'danger',
+
+
+}
+
+
+
 
 ROOT_URLCONF = 'butter.urls'
 
@@ -110,7 +123,7 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATICFILES_DIRS= [
-    BASE_DIR / "static"
+    BASE_DIR / "static",
 ]
 
 LOGIN_REDIRECT_URL = reverse_lazy('home')
