@@ -10,8 +10,9 @@
   margin: 0, auto;
 }
 .container a{
-  width: 45%;
-  max-width: 250px;
+  width: 40%;
+  max-width: 200px;
+  padding: .5rem;
 }
 .container div {
   display: flex;
@@ -21,7 +22,8 @@
 }
 .container img{
     width:100%;
-    border-radius:1rem;
+    border-top-left-radius:1rem;
+    border-top-right-radius:1rem;
 }
 
 </style>
@@ -32,7 +34,10 @@
 
   <a href="{% url 'articleapp:detail' pk=article.pk %}">
     {% include 'snippets/card.html' with article=article %}
-    헬{{ target_article.writer.profile.nickname }}로
+    <div
+            style="background-color:white; border-radius:0rem; height:100px;border-bottom-left-radius:1rem;border-bottom-right-radius:1rem;">
+      zz
+    </div>
   </a>
 
   {% endfor %}

@@ -1,33 +1,27 @@
-<div class="left_nav">
-    <button class="material-icons" onclick="on_display()">
-        loyalty
-    </button>
+<div class="left_top">
+    <a href="#menu" id="toggle">
+        <i class="material-icons">favorite</i>
+    </a>
 
-    <div class="left_list" id="category" >
-        <ul class="list-group">
-            <a href="{% url 'articleapp:list' %}"><li class="list-group-item" style="text-align:left;">
-                <i class="material-icons" style="vertical-align: middle;">favorite</i>
-                <p style="display:inline; margin-left:3rem;">
-                    Articles
-                </p>
-                </li></a>
-            <a href="{% url 'projectapp:list' %}"><li class="list-group-item" style="text-align:left;">
-                <i class="material-icons" style="vertical-align: middle;">favorite</i>
-                <p style="display:inline; margin-left:3rem;">
-                    Projects
-                </p>
-            </li></a>
-            <a href="{% url 'subscribeapp:list' %}"><li class="list-group-item" style="text-align:left;">
-                <i class="material-icons" style="vertical-align: middle;">favorite</i>
-                <p style="display:inline; margin-left:3rem;">
-                    Subscribe
-                </p>
-                </li></a>
-        </ul>
+    <div id="menu">
+      <ul>
+        <li><a href="{% url 'articleapp:list'%}">Articles</a></li>
+        <li><a href="{% url 'projectapp:list' %}">Projects</a></li>
+        <li><a href="{% url 'subscribeapp:list' %}">Subscription</a></li>
+      </ul>
     </div>
-
-
 </div>
+
+<div class="left_bottom">
+    <h1 class="butter_logo" style="font-size:1rem; padding-top:1rem;">Shookiki</h1>
+</div>
+
+    <!--<div id="category" style="visibility:hidden;">
+        <span>a</span>
+        <span>b</span>
+        <span>c</span>
+    </div>-->
+
 <!--
 {% if  user.is_authenticated %}
     <div class="shookikies">
@@ -69,5 +63,51 @@ function on_display(){
     else{
         document.getElementById('category').style.visibility="visible";
     }
+}
+</script>
+
+
+<script>
+    var theToggle = document.getElementById('toggle');
+
+// based on Todd Motto functions
+// https://toddmotto.com/labs/reusable-js/
+
+// hasClass
+function hasClass(elem, className) {
+	return new RegExp(' ' + className + ' ').test(' ' + elem.className + ' ');
+}
+// addClass
+function addClass(elem, className) {
+    if (!hasClass(elem, className)) {
+    	elem.className += ' ' + className;
+    }
+}
+// removeClass
+function removeClass(elem, className) {
+	var newClass = ' ' + elem.className.replace( /[\t\r\n]/g, ' ') + ' ';
+	if (hasClass(elem, className)) {
+        while (newClass.indexOf(' ' + className + ' ') >= 0 ) {
+            newClass = newClass.replace(' ' + className + ' ', ' ');
+        }
+        elem.className = newClass.replace(/^\s+|\s+$/g, '');
+    }
+}
+// toggleClass
+function toggleClass(elem, className) {
+	var newClass = ' ' + elem.className.replace( /[\t\r\n]/g, " " ) + ' ';
+    if (hasClass(elem, className)) {
+        while (newClass.indexOf(" " + className + " ") >= 0 ) {
+            newClass = newClass.replace( " " + className + " " , " " );
+        }
+        elem.className = newClass.replace(/^\s+|\s+$/g, '');
+    } else {
+        elem.className += ' ' + className;
+    }
+}
+
+theToggle.onclick = function() {
+   toggleClass(this, 'on');
+   return false;
 }
 </script>
