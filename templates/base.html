@@ -1,25 +1,37 @@
 <!DOCTYPE html>
 <html lang="ko">
 {% include 'head.html' %}
-<body style="font-family:'NanumSquareRoundOTFR';">
+<header>
     {%include 'header.html'%}
+</header>
+<body style="font-family:'NanumSquareRoundOTFR'; background-color:#D5F1FF; " >
 
-    <hr>
+    <div class="left">
+        {% include 'side_left.html' %}
+    </div>
 
-    {% for message in messages %}
+    <div class="center">
+        {% for message in messages %}
 
-    <div class = 'text-center'>
+    <div class = 'text-center' >
         <div class="btn btn-{{ message.tags }} rounded-pill px-5 my-3">
             {{ message }}
         </div>
     </div>
     {% endfor %}
-
     {% block content %}
     {% endblock %}
+    </div>
 
-    <hr>
+    <div class="right">
+        오른쪼긱
+    </div>
 
-    {%include 'footer.html'%}
+    <div class="footer">
+        {%include 'footer.html'%}
+    </div>
+
+
+
 </body>
 </html>

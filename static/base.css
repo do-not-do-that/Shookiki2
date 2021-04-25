@@ -1,10 +1,12 @@
 .butter_logo{
-    font-family: 'Chewy', cursive;
+    font-family: 'Hanalei Fill', cursive;
+    color: #E658C3;
 }
 
 .butter_footer{
     text-align:center;
-    margin-top:2rem;
+    margin-top:.5rem;
+    margin-bottom:.5rem;
 }
 
 .butter_footer_button{
@@ -12,8 +14,9 @@
  }
 
  .butter_header{
+    background-color:#D5F1FF;
     text-align:center;
-    margin:2rem 0;
+    padding:2rem 0 0.5rem 0;
  }
 
 @media screen and (max-width:500px){
@@ -29,10 +32,101 @@ a:hover{
 }
 
 .header_nav{
-    margin: 0 0.5rem;
+    margin: 0 .5rem;
 }
-
 
 .header_navber{
     margin: 1rem 0;
+}
+
+.left{
+    position:fixed;
+    top: 6.5rem;
+    width: 15%;
+    height: 70%;
+    border : 1px solid black;
+    float: left;
+    position:fixed;
+    padding:1rem;
+    z-index:1;
+
+}
+.left button{
+    border: 5px double black;
+    background-color:white;
+    color:hotpink;
+    float:left;
+    width: ;
+}
+.left_nav{
+    position:absolute;
+    top:1rem;
+    left: 1rem;
+    width: 20rem;
+    text-align:center;
+}
+.left_list{
+    visibility:hidden;
+    display:flex;
+    margin-left:5rem;
+    border : 2px double black;
+    line-height: 3rem;
+}
+.left_list ul{
+    width: 100%;
+}
+.center{
+    float:left;
+    width: 70%;
+    position:absolute;
+    left:15%;
+    top: 6.5rem;
+}
+
+.right{
+    width: 15%;
+    height: 70%;
+    border : 1px solid black;
+    float: right;
+    position:fixed;
+    top: 6.5rem;
+    right:0;
+}
+.footer{
+    background-color:#D5F1FF;
+    float:left;
+    width: 100%;
+    position:fixed;
+    bottom:0;
+
+}
+body{-ms-overflow-style:none; }
+body::-webkit-scrollbar { display:none; }
+
+.shookikies{
+    position:absolute;
+    bottom:0;
+}
+
+.profile-list {
+  list-style: none inside;
+  position:relative;
+
+}
+.profile-list--item {
+    border: 1px solid red;
+  display: inline-block;
+  width: 100%;
+  text-align: right;
+}
+.profile-img{
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 50%;
+    float:left;
+    display:block;
+}
+.profile-name {
+  padding-top: 2em;
+  font-size: 1em;
 }

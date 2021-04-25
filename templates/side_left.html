@@ -1,0 +1,73 @@
+<div class="left_nav">
+    <button class="material-icons" onclick="on_display()">
+        loyalty
+    </button>
+
+    <div class="left_list" id="category" >
+        <ul class="list-group">
+            <a href="{% url 'articleapp:list' %}"><li class="list-group-item" style="text-align:left;">
+                <i class="material-icons" style="vertical-align: middle;">favorite</i>
+                <p style="display:inline; margin-left:3rem;">
+                    Articles
+                </p>
+                </li></a>
+            <a href="{% url 'projectapp:list' %}"><li class="list-group-item" style="text-align:left;">
+                <i class="material-icons" style="vertical-align: middle;">favorite</i>
+                <p style="display:inline; margin-left:3rem;">
+                    Projects
+                </p>
+            </li></a>
+            <a href="{% url 'subscribeapp:list' %}"><li class="list-group-item" style="text-align:left;">
+                <i class="material-icons" style="vertical-align: middle;">favorite</i>
+                <p style="display:inline; margin-left:3rem;">
+                    Subscribe
+                </p>
+                </li></a>
+        </ul>
+    </div>
+
+
+</div>
+<!--
+{% if  user.is_authenticated %}
+    <div class="shookikies">
+        <h2>Shookikies</h2>
+        <ul class="profile-list">
+            <li class="profile-list&#45;&#45;item">
+            <header class="profile-details">
+            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/5175/cadet-mahoney.jpg" alt="" class="profile-img" />
+            <h3 class="profile-name">Carey Mahoney</h3>
+            </header>
+            </li>
+            <li class="profile-list&#45;&#45;item">
+            <header class="profile-details">
+            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/5175/cadet-mahoney.jpg" alt="" class="profile-img" />
+            <h3 class="profile-name">Carey</h3>
+            </header>
+            </li>
+        </ul>
+    </div>
+{% endif %}-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+function on_display(){
+    if(document.getElementById('category').style.visibility == "visible"){
+        document.getElementById('category').style.visibility="hidden";
+    }
+    else{
+        document.getElementById('category').style.visibility="visible";
+    }
+}
+</script>

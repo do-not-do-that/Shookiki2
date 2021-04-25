@@ -1,9 +1,9 @@
-<div class="butter_header">
+<div class="butter_header pop container-fluid fixed-top mb-1">
         <div>
-            <a href="{% url 'home' %}"><h1 class="butter_logo">Butter</h1></a>
+            <a href="{% url 'home' %}"><h1 class="butter_logo" style="font-size:3rem;">Shookiki</h1></a>
         </div>
-        <div class="header_navbar">
-            <a href="{% url 'articleapp:list' %}" class="header_nav">
+        <div class="header_nav" style="text-align:right; margin-right:2rem;">
+            <!--<a href="{% url 'articleapp:list' %}" class="header_nav">
                 <span>Articles</span>
             </a>
             <a href="{% url 'projectapp:list' %}" class="header_nav">
@@ -11,7 +11,7 @@
             </a>
             <a href="{% url 'subscribeapp:list' %}" class="header_nav">
             <span>Subscription</span>
-            </a>
+            </a>-->
             {% if not user.is_authenticated %}
             <a href="{% url 'accountapp:login'%}?next={{request.path}}" class="header_nav">
                 <span>Login</span>
