@@ -43,3 +43,14 @@ class SubscriptionListView(ListView):
         projects = Subscription.objects.filter(user=self.request.user).values_list('project')
         article_list = Article.objects.filter(project__in=projects)
         return article_list
+
+@method_decorator(login_required,'get')
+class SubscriptionFollowView(ListView):
+    model = Project
+    context_object_name = 'project_list'
+    template_name = 'subscribeapp/sub_follow.html'
+
+    def get_queryset(self):
+        subscribe_projects = Subscription.objects.filter(user=self.request.user).values_list('project')
+        projects_list = Project.objects.filter(id__in=subscribe_projects)
+        return projects_list

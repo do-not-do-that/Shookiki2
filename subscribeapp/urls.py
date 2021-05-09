@@ -1,10 +1,11 @@
 from django.urls import path
 
-from subscribeapp.views import SubscriptionView, SubscriptionListView
+from subscribeapp.views import SubscriptionView, SubscriptionListView, SubscriptionFollowView
 
 app_name='subscribeapp'
 
 urlpatterns=[
     path('subscribe/',SubscriptionView.as_view(),name='subscribe'),
-    path('list/',SubscriptionListView.as_view(),name='list')
+    path('list/',SubscriptionListView.as_view(),name='list'),
+    path('follow/',SubscriptionFollowView.as_view(),name='follow'),
 ]

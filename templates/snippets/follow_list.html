@@ -1,0 +1,6 @@
+{% if project_list %}
+    {% for project in project_list %}
+        {% include 'snippets/card_project.html' with project=project %}
+    단계 1 :{{project}} <br>
+    {% endfor %}
+{% endif %}
