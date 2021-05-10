@@ -1,7 +1,5 @@
 from django.contrib import messages
-from django.contrib.auth import get_user_model
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.contrib.auth.tokens import default_token_generator
 from django.http import HttpResponse, HttpResponseRedirect
@@ -15,7 +13,7 @@ from django.views.generic.list import MultipleObjectMixin
 from accountapp.decorators import account_ownership_required
 from accountapp.templates.accountapp.forms import AccountUpdateForm, AccountCreationForm
 from articleapp.models import Article
-from butter.settings import deploy
+from butter.settings.deploy import EMAIL
 
 has_ownership = [account_ownership_required, login_required]
 
@@ -37,7 +35,7 @@ class AccountCreateView(CreateView):
     def send_verification_email(self, user):
         token = self.token_generator.make_token(user)
         user.email_user('회원가입을 축하드립니다.', '다음 주소로 이동하셔서 인증하세요. {}'.format(self.build_verification_link(user, token)),
-                        from_email=deploy.EMAIL['EMAIL_HOST_USER'])
+                        from_email=EMAIL['EMAIL_HOST_USER'])
         messages.info(self.request, '회원가입을 축하드립니다. 가입하신 이메일주소로 인증메일을 발송했으니 확인 후 인증해주세요.')
 
     def build_verification_link(self, user, token):
