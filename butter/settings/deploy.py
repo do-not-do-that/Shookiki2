@@ -10,7 +10,7 @@ def read_secret(secret_name):
 
 env = environ.Env(
     # set casting, default value
-    DEBUG=(bool, True)
+    DEBUG=(bool, False)
 )
 
 # reading .env file
@@ -36,7 +36,7 @@ EMAIL_HOST_PASSWORD = read_secret('EMAIL_HOST_PASSWORD')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
