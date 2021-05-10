@@ -19,7 +19,7 @@ from django.urls import reverse_lazy
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-from butter.settings import deploy
+from butter.settings.deploy import EMAIL
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
@@ -134,9 +134,10 @@ MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-EMAIL_BACKEND = deploy.EMAIL['EMAIL_BACKEND']
-EMAIL_USE_TLS = deploy.EMAIL['EMAIL_USE_TLS']
-EMIL_PORT = deploy.EMAIL['EMIL_PORT']
-EMAIL_HOST = deploy.EMAIL['EMAIL_HOST']
-EMAIL_HOST_USER = deploy.EMAIL['EMAIL_HOST_USER']
-EMAIL_HOST_PASSWORD = deploy.EMAIL['EMAIL_HOST_PASSWORD']
+
+EMAIL_BACKEND = EMAIL['EMAIL_BACKEND']
+EMAIL_USE_TLS = EMAIL['EMAIL_USE_TLS']
+EMIL_PORT = EMAIL['EMIL_PORT']
+EMAIL_HOST = EMAIL['EMAIL_HOST']
+EMAIL_HOST_USER = EMAIL['EMAIL_HOST_USER']
+EMAIL_HOST_PASSWORD = EMAIL['EMAIL_HOST_PASSWORD']
