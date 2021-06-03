@@ -15,9 +15,9 @@
   padding: .5rem;
 }
 .container div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+<!--  display: flex;-->
+<!--  justify-content: center;-->
+<!--  align-items: center;-->
   border-radius: 1rem;
 }
 .container img{
@@ -34,10 +34,7 @@
 
   <a href="{% url 'articleapp:detail' pk=article.pk %}">
     {% include 'snippets/card.html' with article=article %}
-    <div
-            style="background-color:white; border-radius:0rem; height:100px;border-bottom-left-radius:1rem;border-bottom-right-radius:1rem;">
-      zz
-    </div>
+
   </a>
 
   {% endfor %}
