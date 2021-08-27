@@ -13,8 +13,8 @@ from django.views.generic.list import MultipleObjectMixin
 from accountapp.decorators import account_ownership_required
 from accountapp.templates.accountapp.forms import AccountUpdateForm, AccountCreationForm
 from articleapp.models import Article
-from butter.settings import deploy
-# from butter.settings import local
+# from butter.settings import deploy
+from butter.settings import local
 
 has_ownership = [account_ownership_required, login_required]
 
@@ -24,7 +24,6 @@ class AccountCreateView(CreateView):
     success_url = reverse_lazy('home')
     verify_url = 'accounts/verify/'
     template_name = 'accountapp/create.html'
-
     token_generator = default_token_generator
 
     def form_valid(self, form):
@@ -36,7 +35,7 @@ class AccountCreateView(CreateView):
     def send_verification_email(self, user):
         token = self.token_generator.make_token(user)
         user.email_user('회원가입을 축하드립니다.', '다음 주소로 이동하셔서 인증하세요. {}'.format(self.build_verification_link(user, token)),
-                        from_email=deploy.EMAIL_HOST_USER)
+                        from_email=local.EMAIL_HOST_USER)
         messages.info(self.request, '회원가입을 축하드립니다. 가입하신 이메일주소로 인증메일을 발송했으니 확인 후 인증해주세요.')
 
     def build_verification_link(self, user, token):

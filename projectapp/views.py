@@ -13,6 +13,7 @@ from projectapp.models import Project
 from subscribeapp.models import Subscription
 
 
+
 class ProjectListView(ListView):
     model = Project
     context_object_name = 'project_list'
